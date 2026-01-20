@@ -1,0 +1,777 @@
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+  scroll-padding-top: 100px; /* Adjust this value based on your navbar height */
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #000000,
+    #000
+  ); /* Black gradient background */
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  padding: 4rem 2rem;
+  background-color: transparent; /* Transparent background for sections */
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  padding-top: 60px; /* Adjust according to the height of your nav */
+  margin-top: -60px; /* Pulls the section up to avoid extra space */
+}
+
+/* Heading Style */
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #f5f6fa; /* White text color */
+}
+
+nav {
+  background-color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo Styles */
+nav .logo {
+  color: yellow;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Menu List Styles */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: yellow;
+  color: black;
+  border-radius: 5px;
+}
+
+/* Hamburger Icon for Small Devices */
+.menu-icon {
+  display: none;
+  color: yellow;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+nav ul li a.active {
+  color: #ffc107; /* Highlight color for active link */
+}
+
+/* Button Styles */
+button {
+  background-color: #f39c12; /* Yellowish buttons */
+  color: #1b1b1b; /* Dark text on button */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #e67e22; /* Slightly darker yellow on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+
+/* Home Section */
+#home {
+  height: 100vh;
+  background: url("background.jpg") no-repeat center center/cover;
+  color: #f5f6fa; /* Light text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative; /* For overlay positioning */
+  overflow: hidden;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+  z-index: -1; /* Place overlay behind content */
+}
+
+#home h1 {
+  font-size: 3rem;
+  animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Text shadow for better contrast */
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Keyframes for blinking cursor */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #f5f6fa;
+  }
+}
+
+/* About Section */
+#about {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 4rem;
+  background-color: black; /* Black background for the section */
+  color: #f5f6fa; /* Light text color */
+}
+
+.about-left {
+  width: 40%;
+  text-align: center;
+}
+
+.about-left img {
+  width: 80%;
+  height: auto;
+  border-radius: 50%; /* Circular image */
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.about-left img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+.about-img img {
+  max-height: 500px;
+  max-width: 200px;
+  border-radius: 500%; /* Optional: make it circular */
+}
+/* Skills Section */
+.skills {
+  margin-top: 2rem;
+}
+
+.skill {
+  margin-bottom: 1.5rem;
+}
+
+.skill p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #f5f6fa; /* Light text color */
+}
+
+/* Progress Bar Styling */
+.progress-bar {
+  height: 12px;
+  background-color: #444; /* Darker gray background for contrast */
+  border-radius: 25px;
+  height: 18px; /* Reduced height for a smaller bar */
+  overflow: hidden; /* Ensure rounded corners are visible */
+}
+
+.progress-bar .progress {
+  height: 100%;
+  border-radius: 25px;
+  background-color: #f4c430; /* Yellow progress bar */
+  transition: width 0.4s ease-in-out; /* Smooth transition for progress */
+}
+
+/* About Section - Right Side */
+.about-right {
+  width: 55%;
+  padding-left: 2rem;
+  background-color: #222; /* Dark background for contrast */
+  padding: 2rem;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.about-right h3 {
+  font-size: 2.2rem; /* Slightly larger font for headers */
+  color: #f5f6fa; /* Light text color */
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-transform: uppercase; /* Makes the title stand out */
+  border-bottom: 2px solid #f4c430; /* Yellow underline for emphasis */
+  padding-bottom: 0.5rem;
+}
+
+.about-right p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ccc; /* Light gray text for better readability */
+  margin-bottom: 1.5rem; /* Added spacing between paragraphs */
+  text-align: justify; /* Justified text for a cleaner look */
+}
+
+/* Adjusting only the Education text */
+.about-right p b {
+  color: #f4c430; /* Yellow color for highlighted text like labels */
+  font-weight: bold;
+}
+
+/* Hover Effect */
+.about-right:hover {
+  transform: translateY(-5px); /* Slight upward movement on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Home Section Adjustments */
+#home {
+  background-color: black; /* Make sure the background is black */
+}
+
+#home h1 {
+  color: #f5f6fa; /* White text for the home section title */
+  border: none;
+}
+
+/* About Section Adjustments */
+#about {
+  background-color: black; /* Ensure a black background for the About section */
+}
+
+.about-left img {
+  border: 5px solid black; /* Ensure image border doesn't cover the section */
+}
+/* Resume Section */
+#resume {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #000; /* Black background for the section */
+  /* background: linear-gradient(to right, #000, #333); Subtle gradient for depth */
+  position: relative; /* For positioning the decorative elements */
+}
+
+/* Resume Heading */
+#resume h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff; /* White text color */
+  position: relative; /* For the underline positioning */
+  display: inline-block;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow for added depth */
+}
+
+#resume h1::after {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #f9a825; /* Yellow underline */
+  width: 100%; /* Full width of the heading text */
+  position: absolute; /* Absolute positioning to align under the text */
+  left: 0; /* Align to the left edge */
+  bottom: -10px; /* Position below the text */
+  border-radius: 3px; /* Rounded corners for the underline */
+}
+
+/* Resume Paragraphs */
+#resume p {
+  font-size: 18px;
+  color: #aaa; /* Light gray text color */
+  margin-top: 20px;
+  line-height: 1.6; /* Improved readability */
+  max-width: 800px; /* Restrict paragraph width for better readability */
+  margin-left: auto;
+  margin-right: auto; /* Center-align paragraphs */
+}
+
+/* Education Section */
+#education {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: black; /* Black background for the section */
+}
+
+/* Section Heading */
+#education h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #fff; /* White text color */
+  text-transform: uppercase; /* Uppercase text for emphasis */
+  position: relative; /* For the underline positioning */
+  display: inline-block;
+}
+
+#education h2::after {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #f9a825; /* Yellow underline */
+  width: 100%; /* Full width of the heading text */
+  position: absolute; /* Absolute positioning to align under the text */
+  left: 0; /* Align to the left edge */
+  bottom: -10px; /* Position below the text */
+  border-radius: 3px; /* Rounded corners for the underline */
+}
+
+/* Education Container */
+.education-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds space between the cards */
+}
+
+/* Education Card */
+.education-card {
+  background-color: #1e1e1e; /* Dark gray card background */
+  padding: 20px;
+  margin: 10px; /* Reduced margin for tighter layout */
+  border-radius: 8px;
+  width: 280px; /* Slightly smaller width for a cleaner look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.education-card:hover {
+  transform: translateY(-10px); /* Lift card on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.education-card h3 {
+  color: #f9a825; /* Yellow color for headings */
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 10px 0; /* Adjusted margins */
+}
+
+.education-card p {
+  color: #fff; /* White text color */
+  margin: 5px 0; /* Reduced margin for tighter text layout */
+}
+
+.education-card p:nth-child(3) {
+  color: #888; /* Light gray for specific paragraphs */
+}
+
+.resume-btn {
+  background-color: #f9a825; /* Yellow button */
+  color: black; /* Black text color */
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline for link-style button */
+
+  display: inline-block;
+}
+
+.resume-btn:hover {
+  background-color: #ffc107; /* Slightly lighter yellow on hover */
+}
+
+.resume-btn:focus {
+  outline: 2px solid #004d40; /* Darker teal focus outline */
+}
+/* Headings */
+h1,
+h2 {
+  text-align: center;
+  color: #f5f6fa; /* White text color */
+}
+
+h1.big {
+  font-size: 4rem;
+  color: #ffcc00; /* Yellow color */
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+/* Center the project heading and description */
+.ftco-animate {
+  text-align: center; /* Center the whole block */
+  margin-bottom: 2rem; /* Space between heading and project section */
+}
+
+.ftco-animate h1.big {
+  margin-bottom: 0.5rem; /* Small margin between "Projects" and the next line */
+}
+
+.ftco-animate h2 {
+  margin-top: 0; /* Remove extra margin above the subheading */
+  margin-bottom: 1rem; /* Space between the two headings */
+}
+
+.ftco-animate p {
+  margin: 0 auto; /* Center text */
+  display: block; /* Ensure paragraph behaves like block elements */
+  font-size: 1.1rem; /* Increase size for better visibility */
+  color: #d4d4d4; /* Light gray text for "Below are the Projects" */
+}
+
+/* Project Cards Container */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Individual Project Card */
+.project-card {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2); /* Shadow effect on hover */
+}
+
+/* Project Card Links (Images) */
+.block-20 {
+  display: block;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Zoom Effect on Hover */
+.zoom-effect:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2); /* Shadow effect */
+}
+
+/* Text Container for Project Card */
+.text {
+  margin-top: 20px;
+  color: #d4d4d4; /* Light gray text color */
+}
+
+/* Project Titles */
+.text .heading a {
+  font-size: 1.5rem;
+  color: #ffcc00; /* Yellow color for titles */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect for Titles */
+.text .heading a:hover {
+  color: #ffd700; /* Slightly darker yellow on hover */
+}
+
+/* Project Description */
+.text p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #d4d4d4; /* Light gray description text */
+}
+
+/* Center "I love to solve business problems" section */
+.container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center;
+  padding: 30px;
+  background-color: black;
+  text-align: center; /* Center text inside */
+  margin: 0 auto; /* Center container within the parent */
+  height: 80vh;
+}
+
+.heading h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white; /* White text for the heading */
+}
+
+.heading p {
+  margin: 0 auto; /* Center paragraph */
+}
+
+.heading p a {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: yellow; /* Yellow button */
+  color: black; /* Button text color */
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block; /* Ensure button is inline-block for centering */
+  margin-top: 20px; /* Space above the button */
+}
+
+.heading p a:hover {
+  background-color: #ffd700; /* Slightly darker yellow on hover */
+  color: white; /* Change text to white on hover */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #000; /* Black background */
+  color: #fff;
+  text-align: center;
+}
+
+.contact-section {
+  padding: 50px 0;
+  background-color: transparent; /* Transparent to blend with body background */
+}
+
+.contact-section h1 {
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px; /* Space below heading */
+}
+
+.contact-section p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 50px; /* Increased space below paragraph */
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* Even space between icons */
+  flex-wrap: wrap; /* Ensure layout is responsive */
+}
+
+.contact-item {
+  text-align: center;
+  margin-bottom: 40px; /* Adds space for the items */
+  width: 150px; /* Set a fixed width for consistent icon and text alignment */
+}
+
+.contact-item .icon {
+  border: 2px solid #ffc107; /* Yellow border */
+  border-radius: 50%; /* Circular shape */
+  width: 100px; /* Set consistent width */
+  height: 100px; /* Set consistent height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto; /* Center icon and space below */
+  background-color: transparent; /* No background color */
+}
+
+.contact-item .icon i {
+  color: #ffc107; /* Yellow icon color */
+  font-size: 40px; /* Increased icon size */
+}
+
+
+.contact-item p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-item {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 150px;
+}
+
+.contact-item h3,
+.contact-item p {
+  margin: 0;
+  padding: 0;
+}
+
+.contact-item a {
+  display: block; /* Ensure the link takes full block space */
+  width: 100%; /* Makes the link width consistent */
+  text-align: center; /* Centers the email text */
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+
+
+/* Social links */
+.social-links {
+  margin-top: 50px;
+}
+
+.social-links p {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  margin: 0 20px; /* Space between social icons */
+  color: yellow;
+}
+
+.social-links a:hover {
+  color: #ffc107; /* Hover effect for social icons */
+}
+
+ /* Responsive Styles for Small Devices */
+@media only screen and (max-width: 768px) {
+  /* Display the hamburger menu */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hide the menu by default */
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #222;
+    width: 100%;
+    display: none; /* Initially hidden */
+  }
+
+  /* Show the menu when the show class is added */
+  nav ul.show {
+    display: flex; /* Show the menu */
+  }
+
+  /* Adjust the margin for the list items in small devices */
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* Adjust anchor tag styles for smaller screens */
+  nav ul li a {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  /* Adjusting about-right section for smaller screens */
+  .about-right {
+    width: 90%;
+    padding: 1.5rem; /* Adjust padding */
+  }
+
+  .about-right h3 {
+    font-size: 1.8rem; /* Reduce font size for headers */
+  }
+
+  .about-right p {
+    font-size: 1rem; /* Adjust paragraph font size */
+    line-height: 1.6; /* Adjust line height */
+  }
+
+  #about {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+  }
+
+  #about .about-left, #about .about-right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr; /* Single column for mobile */
+  }
+}
+
+/* For small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .about-right {
+    width: 100%;
+    padding: 1rem; /* Further reduce padding */
+  }
+
+  .about-right h3 {
+    font-size: 1.5rem; /* Smaller font size for headers */
+  }
+
+  .about-right p {
+    font-size: 0.9rem; /* Smaller paragraph font size */
+    line-height: 1.5; /* Adjust line height for better readability */
+  }
+}
+
+/* For medium devices (tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #about .about-left, #about .about-right {
+    width: 45%; 
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+} 
+
+
+/* For large devices (desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+  #home h1 {
+    font-size: 4rem;
+  }
+
+  .projects {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for desktops */
+  }
+}
+
+
